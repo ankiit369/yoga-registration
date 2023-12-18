@@ -43,4 +43,18 @@
   button:hover {
     background-color: #3f51b5;
   }
+  .submit-status {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+  }
   
+  .success {
+    background-color: #4caf50;
+  }
+  
+  .error {
+    background-color: #f44336;
+  }  

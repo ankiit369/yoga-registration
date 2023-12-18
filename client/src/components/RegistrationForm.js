@@ -9,13 +9,36 @@ const RegistrationForm = () => {
     batch: ''
   });
 
+  const [submitStatus, setSubmitStatus] = useState({
+    success: false,
+    message: ''
+  });
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSubmitStatus({ success: false, message: '' }); // Reset status on new submission
+
     try {
       const response = await axios.post('http://localhost:5000/register', formData);
-      console.log(response.data);
+      setSubmitStatus({
+        success: true,
+        message: `Registration successful! ${response.data.paymentDetails.message}`
+      });
+      // Resetting the form
+      setFormData({
+        name: '',
+        age: '',
+        contact: '',
+        batch: ''
+      });
+      console.log('Registration suceessful');
     } catch (error) {
-      console.error('Registration error', error);
+      console.error('Registration error:', error);
+      // different errors to be handled differently
+      setSubmitStatus({
+        success: false,
+        message: error.response ? `${error.response.data.message} ${error.response.data.paymentMessage || ''}` : 'Registration failed!'
+      });
     }
   };
 
@@ -72,6 +95,11 @@ const RegistrationForm = () => {
         </div>
         <button type="submit">Register</button>
       </form>
+      {submitStatus.message && (
+        <div className={`submit-status ${submitStatus.success ? 'success' : 'error'}`}>
+          {submitStatus.message}
+        </div>
+      )}
     </div>
   );
 };
