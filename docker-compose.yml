@@ -3,21 +3,21 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ./ # Replace with your backend directory
+      context: ./ 
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes:
-      - .:/usr/src/app # Replace with your backend directory
+      - .:/usr/src/app 
       - /usr/src/app/node_modules
     environment:
-      - MONGODB_URI=mongodb+srv://ankiit3063:tlOIhP6WJi7CxnEV@cluster-yoga.ulqvp4p.mongodb.net/ # Replace with your MongoDB URI if different
+      - MONGODB_URI=mongodb+srv://ankiit3063:tlOIhP6WJi7CxnEV@cluster-yoga.ulqvp4p.mongodb.net/
     depends_on:
       - mongo
 
   frontend:
     build:
-      context: ./client # Replace with your frontend directory
+      context: ./client 
       dockerfile: Dockerfile
     ports:
       - "3000:80"
