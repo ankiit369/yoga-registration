@@ -36,4 +36,23 @@ git clone https://github.com/ankiit369/yoga-registration.git
 cd yoga-registration
 ```
 
+## Install backend dependencies:
+```sh
+npm install
+```
+
+## Start the backend server:
+```sh
+npm start
+```
+
+## Navigate to the frontend directory:
+```sh
+cd client
+```
+
+## Install frontend dependencies:
+```sh
+npm install
+```
 
