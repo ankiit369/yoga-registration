@@ -23,3 +23,17 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them:
 - Node.js
 - MongoDB
+
+
+### Installing
+
+A step-by-step series of examples that tell you how to get a development environment running.
+
+Clone the repository:
+
+```sh
+git clone https://github.com/ankiit369/yoga-registration.git
+cd yoga-registration
+```
+
+
